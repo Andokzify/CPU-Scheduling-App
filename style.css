@@ -51,7 +51,7 @@ header {
 
 header h1 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-size: 30px;
   color: var(--yellow);
   text-shadow: 2px 2px #000;
   letter-spacing: 1px;
@@ -158,7 +158,8 @@ button:hover {
 }
 
 .card h3 {
-  font-size: 15px;
+  font-size: 11px;
+  font-family: 'Press Start 2P', cursive;
   letter-spacing: 1px;
   margin-bottom: 14px;
 }
@@ -315,7 +316,7 @@ th {
   padding: 15px;
   font-size: 17px;
   font-weight: bold;
-  font-family: 'Courier New', monospace;
+  font-family: 'Press Start 2P', cursive;
   letter-spacing: 2px;
   margin-top: 14px;
   cursor: pointer;
@@ -344,8 +345,9 @@ th {
 }
 
 .panel-top h3 {
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 1px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .win-btn {
@@ -404,6 +406,7 @@ th {
   border-radius: 50%;
   padding: 2px 7px;
   color: var(--yellow);
+  font-weight: bold;
 }
 
 
@@ -417,7 +420,7 @@ th {
 }
 
 .panel-content {
-  padding: 14px;
+  padding: 12px;
   min-height: 160px;
 }
 
@@ -425,9 +428,10 @@ th {
 .gray-text {
   color: var(--gray);
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 /* Side-by-side layout: formula lines + average box */
@@ -442,7 +446,8 @@ th {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
   line-height: 1.6;
   color: var(--text);
 }
@@ -456,7 +461,8 @@ th {
   border: 3px solid var(--yellow);
   padding: 12px 14px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
   white-space: nowrap;
   line-height: 1.8;
 }
@@ -473,9 +479,10 @@ th {
    TIMELINE
    ============================================= */
 .timeline-chart {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text);
   padding: 8px 0;
+  font-family: 'Courier New', monospace;
 }
 
 .tl-row {
@@ -502,6 +509,7 @@ th {
 .cpu-display {
   text-align: center;
   font-size: 14px;
+  font-family: 'Courier New', monospace;
   color: var(--text);
   line-height: 2.2;
 }
@@ -522,10 +530,11 @@ th {
 /* Idle time shown below utilization */
 .idle-info {
   font-size: 13px;
-  color: var(--gray);
+  color: var(--yellow);
   margin-top: 8px;
-  border-top: 1px solid #333;
+  border-top: 3px solid red;
   padding-top: 8px;
+  font-family: 'Courier New', monospace;
 }
 
 
