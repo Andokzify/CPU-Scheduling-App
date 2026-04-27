@@ -96,7 +96,8 @@ function updateJob(index, field, value) {
 // Adds a new job with default values
 function addJob() {
   let n = jobs.length + 1;
-  jobs.push({ id: "J" + n, arrival: 0, burst: 1, priority: 1 });
+  // Change the numbers to empty strings ""
+  jobs.push({ id: "J" + n, arrival: "", burst: "", priority: "" });
   buildTable();
   hideError();
 }
