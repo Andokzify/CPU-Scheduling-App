@@ -524,47 +524,27 @@ th {
    MOBILE RESPONSIVENESS (Media Queries)
    ============================================= */
 
+/* =============================================
+   COMPLETE MOBILE REFRESH
+   ============================================= */
+
 @media (max-width: 950px) {
-  /* 1. Fix the overlapping vertical line */
-  .left-panel {
-    border-right: none !important; /* Removes the ghost line */
-    padding-right: 0;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    border-bottom: 4px double var(--yellow); /* Adds a clean separator */
-    box-shadow: none; /* Removes desktop shadow that looks odd on mobile */
-  }
-
-  .main-grid {
-    grid-template-columns: 1fr; /* Forces stacking */
-    gap: 20px;
-  }
-
-  .right-panel {
-    padding-left: 0;
-  }
-
-  /* 2. Fix the squished container padding */
+  /* Fix the container padding for small screens */
   body {
-    padding: 10px; /* More space for the actual app */
+    padding: 10px;
   }
-
+  
   .container {
     padding: 15px;
-    min-height: auto;
+    border-width: 3px;
   }
 
-  /* 3. Stack the result boxes (TAT, WT, etc.) */
-  .results-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  /* 4. Center the Header elements */
+  /* 1. Fix the Header: Stack and Center everything */
   header {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    gap: 20px;
+    padding-bottom: 20px;
   }
 
   .header-left, .header-right {
@@ -573,23 +553,47 @@ th {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
+    margin: 10px 0;
   }
-}
 
-/* 5. Extra fix for the table scroll */
-@media (max-width: 600px) {
+  /* 2. Fix the Main Grid: Remove the vertical line */
+  .main-grid {
+    grid-template-columns: 1fr; /* Force 1 column */
+    gap: 25px;
+  }
+
+  .left-panel {
+    border-right: none !important; /* Kills the vertical line */
+    padding-right: 0;
+    padding-bottom: 25px;
+    border-bottom: 4px double var(--yellow); /* Replaces it with a horizontal separator */
+    width: 100%;
+  }
+
+  .right-panel {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  /* 3. Stack the result boxes (TAT, WT, etc.) */
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* 4. Table Polish: Ensure it doesn't break the screen */
   .card {
-    overflow-x: auto; /* Prevents the table from breaking the layout */
+    overflow-x: auto;
   }
   
   table {
-    min-width: 450px; /* Ensures table remains readable while scrolling */
+    min-width: 400px; /* Keep it readable */
   }
 
   .big-number {
-    font-size: 40px;
-    width: 90px;
+    font-size: 48px;
+    width: 100px;
   }
 }
