@@ -20,6 +20,7 @@ body {
   background: #0e0a04;
   color: var(--text);
   font-family: 'Courier New', monospace;
+  font-weight: bold;
   padding: 20px;
 }
 
@@ -446,7 +447,7 @@ th {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 13px;
+  font-size: 15px;
   font-family: 'Courier New', monospace;
   line-height: 1.6;
   color: var(--text);
@@ -461,7 +462,7 @@ th {
   border: 3px solid var(--yellow);
   padding: 12px 14px;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Courier New', monospace;
   white-space: nowrap;
   line-height: 1.8;
@@ -479,7 +480,7 @@ th {
    TIMELINE
    ============================================= */
 .timeline-chart {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text);
   padding: 8px 0;
   font-family: 'Courier New', monospace;
@@ -508,7 +509,7 @@ th {
    ============================================= */
 .cpu-display {
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Courier New', monospace;
   color: var(--text);
   line-height: 2.2;
@@ -529,10 +530,10 @@ th {
 
 /* Idle time shown below utilization */
 .idle-info {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--yellow);
   margin-top: 8px;
-  border-top: 3px solid red;
+  border-top: 3px solid var(--red);
   padding-top: 8px;
   font-family: 'Courier New', monospace;
 }
