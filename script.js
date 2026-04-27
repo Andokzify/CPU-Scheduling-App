@@ -516,37 +516,40 @@ function displayCPU(jobs, ganttBlocks) {
 // RESET APP
 // =============================================
 function resetApp() {
-  // Clear the data back to empty strings
+  // 1. Clear the data back to empty strings
   jobs = [
     { id: "J1", arrival: "", burst: "",  priority: "" },
     { id: "J2", arrival: "", burst: "",  priority: "" },
     { id: "J3", arrival: "", burst: "",  priority: "" },
-    { id: "J4", arrival: "", burst: "",  priority: "" }
+    { id: "J4", arrival: "", burst: " ",  priority: "" }
   ];
 
+  // 2. Reset the dropdown
   document.getElementById("algorithm").value = "FCFS";
 
-  let panels = [\"tatBox\", \"wtBox\", \"timelineBox\", \"cpuBox\"];
+  // 3. Clear result boxes (Notice: No backslashes here)
+  let panels = ["tatBox", "wtBox", "timelineBox", "cpuBox"];
   let msgs   = [
-    \"Results will appear after calculation\",
-    \"Results will appear after calculation\",
-    \"Timeline will appear after calculation\",
-    \"Will appear after calculation\"
+    "Results will appear after calculation",
+    "Results will appear after calculation",
+    "Timeline will appear after calculation",
+    "Will appear after calculation"
   ];
 
   for (let i = 0; i < panels.length; i++) {
     let box       = document.getElementById(panels[i]);
     box.innerHTML = msgs[i];
-    box.className = \"panel-content gray-text\";
+    box.className = "panel-content gray-text";
   }
 
-  document.getElementById(\"ganttBars\").innerHTML   = \"\";
-  document.getElementById(\"burstLabels\").innerHTML = \"\";
-  document.getElementById(\"timeLabels\").innerHTML  = \"\";
+  // 4. Clear Gantt Chart
+  document.getElementById("ganttBars").innerHTML   = "";
+  document.getElementById("burstLabels").innerHTML = "";
+  document.getElementById("timeLabels").innerHTML  = "";
 
   hasCalculated = false;
   hideError();
-  buildTable(); // This redraws the empty rows
+  buildTable(); // Refreshes the table with the empty values
 }
 
 
