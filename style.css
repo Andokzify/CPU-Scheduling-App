@@ -556,21 +556,22 @@ th {
 
   /* 2. Fix the Main Grid: Remove the vertical line */
   .main-grid {
-    grid-template-columns: 1fr; /* Force 1 column */
-    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .left-panel {
-    border-right: none !important; /* Kills the vertical line */
-    padding-right: 0;
-    padding-bottom: 25px;
-    border-bottom: 4px double var(--yellow); /* Replaces it with a horizontal separator */
-    width: 100%;
+    border-right: none !important; 
+    border-bottom: 4px double var(--yellow) !important;
+    padding-right: 0 !important;
+    margin-bottom: 30px;
+    width: 100% !important;
   }
 
   .right-panel {
-    padding-left: 0;
-    width: 100%;
+    padding-left: 0 !important;
+    width: 100% !important;
   }
 
   /* 3. Stack the result boxes (TAT, WT, etc.) */
