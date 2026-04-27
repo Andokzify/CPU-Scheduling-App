@@ -521,7 +521,7 @@ function resetApp() {
     { id: "J1", arrival: "", burst: "",  priority: "" },
     { id: "J2", arrival: "", burst: "",  priority: "" },
     { id: "J3", arrival: "", burst: "",  priority: "" },
-    { id: "J4", arrival: "", burst: " ",  priority: "" }
+    { id: "J4", arrival: "", burst: "",  priority: "" }
   ];
 
   // 2. Reset the dropdown
