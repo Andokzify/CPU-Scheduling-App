@@ -504,7 +504,7 @@ function displayCPU(jobs, ganttBlocks) {
       <div class="cpu-line"></div>
       <div>${totalSpan}</div>
       <br>
-      <div>${totalBurst} / ${totalSpan} = 1 × 100 =
+      <div>${totalBurst} / ${totalSpan} = ${(totalBurst / totalSpan).toFixed(2)} × 100 =
         <span class="cpu-result">${utilization}%</span>
       </div>
       <br>
