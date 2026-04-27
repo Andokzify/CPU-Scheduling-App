@@ -1,0 +1,521 @@
+/* --- Color variables --- */
+:root {
+  --yellow: #f7d02a;
+  --dark:   #1c1408;
+  --black:  #111;
+  --text:   #f7e68a;
+  --gray:   #888;
+  --red:    #ff4444;
+}
+
+
+/* --- Basic reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0e0a04;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+}
+
+
+/* =============================================
+   CONTAINER
+   ============================================= */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  border: 4px solid var(--yellow);
+  background: var(--black);
+  padding: 20px;
+  min-height: 90vh;
+}
+
+
+/* =============================================
+   HEADER
+   ============================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--yellow);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.cpu-icon {
+  font-size: 40px;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.red    { background: #ff0000; }
+.yellow { background: var(--yellow); }
+.green  { background: #00ff00; }
+
+h1 {
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-align: center;
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dashes {
+  color: var(--yellow);
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+button {
+  background: var(--dark);
+  color: var(--text);
+  border: 3px solid var(--yellow);
+  padding: 10px 18px;
+  font-size: 15px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+
+/* =============================================
+   MAIN 2-COLUMN GRID
+   ============================================= */
+.main-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-right: 25px;
+  border-right: 6px double var(--yellow);
+  box-shadow: 4px 0 14px rgba(247, 208, 42, 0.25);
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 25px;
+}
+
+
+/* =============================================
+   LEFT PANEL CARDS
+   ============================================= */
+.card {
+  border: 3px solid var(--yellow);
+  padding: 15px;
+  background: var(--dark);
+}
+
+.card h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+/* Dropdown */
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-wrapper select {
+  width: 100%;
+  background: var(--dark);
+  color: var(--text);
+  border: 3px solid var(--yellow);
+  padding: 12px 36px 12px 12px;
+  font-size: 15px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  appearance: none;
+}
+
+.dropdown-wrapper select:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.dropdown-wrapper span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--yellow);
+  pointer-events: none;
+}
+
+/* Job counter */
+.counter-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.big-number {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 64px;
+  color: var(--yellow);
+  border: 3px solid var(--yellow);
+  background: var(--black);
+  width: 130px;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.up-down {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.up-down button {
+  width: 60px;
+  height: 45px;
+  font-size: 20px;
+}
+
+/* Error box */
+.error-box {
+  background: #3a0000;
+  border: 2px solid var(--red);
+  color: var(--red);
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 2px solid var(--yellow);
+  padding: 9px 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background: var(--dark);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Small color dot shown next to Job ID */
+.color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Number inputs inside the table */
+#tableBody input {
+  width: 100%;
+  background: var(--dark);
+  color: var(--text);
+  border: 2px solid var(--yellow);
+  padding: 7px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+}
+
+#tableBody input:focus {
+  outline: none;
+  border-color: #fff;
+  background: #1a1a1a;
+}
+
+/* --- INPUT WARNING HIGHLIGHT ---
+   Turns red immediately when user types a bad value */
+#tableBody input.input-error {
+  border-color: var(--red);
+  background: #3a0000;
+  color: var(--red);
+}
+
+/* Delete button per row */
+.del-btn {
+  width: 100%;
+  background: #3a0000;
+  color: var(--red);
+  border: 2px solid var(--red);
+  padding: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.del-btn:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* Calculate button */
+.calc-btn {
+  width: 100%;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.calc-btn:hover {
+  opacity: 0.85;
+}
+
+
+/* =============================================
+   RIGHT PANEL BOXES
+   ============================================= */
+.panel {
+  border: 3px solid var(--yellow);
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.panel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--yellow);
+  padding: 8px 12px;
+}
+
+.panel-top h3 {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.win-btn {
+  width: 24px;
+  height: 22px;
+  font-size: 13px;
+  padding: 0;
+  border: 2px solid var(--yellow);
+  margin-left: 4px;
+}
+
+
+/* =============================================
+   GANTT CHART
+   ============================================= */
+.burst-labels {
+  display: flex;
+  padding: 8px 12px 0;
+  min-height: 24px;
+  font-size: 14px;
+}
+
+.gantt-bars {
+  display: flex;
+  height: 58px;
+  background: #1a1a1a;
+  margin: 6px 12px 0;
+  border: 2px solid #444;
+  overflow: hidden;
+}
+
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px 12px;
+  font-size: 14px;
+}
+
+/* Each bar inside the Gantt */
+.gantt-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Circled final time marker */
+.end-time {
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  padding: 2px 7px;
+  color: var(--yellow);
+}
+
+
+/* =============================================
+   RESULT PANELS (TAT and WT)
+   ============================================= */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel-content {
+  padding: 14px;
+  min-height: 160px;
+}
+
+/* Placeholder text */
+.gray-text {
+  color: var(--gray);
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Side-by-side layout: formula lines + average box */
+.result-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.result-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Each formula line has a colored left border matching the job */
+.result-line {
+  padding: 4px 0 4px 10px;
+}
+
+.avg-box {
+  border: 3px solid var(--yellow);
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1.8;
+}
+
+.avg-box b {
+  display: block;
+  font-size: 20px;
+  color: var(--yellow);
+  margin-top: 6px;
+}
+
+
+/* =============================================
+   TIMELINE
+   ============================================= */
+.timeline-chart {
+  font-size: 14px;
+  color: var(--text);
+  padding: 8px 0;
+}
+
+.tl-row {
+  display: flex;
+}
+
+.tl-cell {
+  flex: 1;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.tl-middle {
+  border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  padding: 4px 0;
+  font-size: 18px;
+}
+
+
+/* =============================================
+   CPU UTILIZATION
+   ============================================= */
+.cpu-display {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 2.2;
+}
+
+.cpu-line {
+  border-top: 2px solid var(--yellow);
+  margin: 4px 30px;
+}
+
+.cpu-result {
+  border: 3px solid var(--yellow);
+  padding: 4px 12px;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--yellow);
+}
+
+/* Idle time shown below utilization */
+.idle-info {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 8px;
+  border-top: 1px solid #333;
+  padding-top: 8px;
+}
