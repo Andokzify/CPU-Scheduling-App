@@ -525,59 +525,71 @@ th {
    ============================================= */
 
 @media (max-width: 950px) {
-  /* 1. Stack the main layout (Left Panel on top, Right Panel below) */
-  .main-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* 2. Adjust the Left Panel's borders and shadows */
+  /* 1. Fix the overlapping vertical line */
   .left-panel {
+    border-right: none !important; /* Removes the ghost line */
     padding-right: 0;
-    border-right: none;
-    padding-bottom: 25px;
-    border-bottom: 6px double var(--yellow);
-    box-shadow: 0 4px 14px rgba(247, 208, 42, 0.25);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom: 4px double var(--yellow); /* Adds a clean separator */
+    box-shadow: none; /* Removes desktop shadow that looks odd on mobile */
   }
 
-  /* 3. Remove the extra padding from the Right Panel */
+  .main-grid {
+    grid-template-columns: 1fr; /* Forces stacking */
+    gap: 20px;
+  }
+
   .right-panel {
     padding-left: 0;
   }
 
-  /* 4. Stack the TAT, Timeline, WT, and CPU result panels */
+  /* 2. Fix the squished container padding */
+  body {
+    padding: 10px; /* More space for the actual app */
+  }
+
+  .container {
+    padding: 15px;
+    min-height: auto;
+  }
+
+  /* 3. Stack the result boxes (TAT, WT, etc.) */
   .results-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
-  /* 5. Allow the table to scroll horizontally if it gets too wide */
-  .card table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 600px) {
-  /* 6. Adjust the Header for very small phone screens */
+  /* 4. Center the Header elements */
   header {
     flex-direction: column;
+    text-align: center;
     gap: 15px;
   }
 
   .header-left, .header-right {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
 
   h1 {
-    font-size: 18px; /* Shrink the title slightly */
-    line-height: 1.4;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+/* 5. Extra fix for the table scroll */
+@media (max-width: 600px) {
+  .card {
+    overflow-x: auto; /* Prevents the table from breaking the layout */
+  }
+  
+  table {
+    min-width: 450px; /* Ensures table remains readable while scrolling */
   }
 
-  /* 7. Shrink the big Job Counter number slightly */
   .big-number {
-    font-size: 48px;
-    width: 100px;
+    font-size: 40px;
+    width: 90px;
   }
 }
