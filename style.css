@@ -520,14 +520,10 @@ th {
   padding-top: 8px;
 }
 
+
 /* =============================================
    MOBILE RESPONSIVENESS (Media Queries)
    ============================================= */
-
-/* =============================================
-   COMPLETE MOBILE REFRESH
-   ============================================= */
-
 @media (max-width: 950px) {
   /* Fix the container padding for small screens */
   body {
