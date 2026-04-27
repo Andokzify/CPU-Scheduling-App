@@ -519,3 +519,65 @@ th {
   border-top: 1px solid #333;
   padding-top: 8px;
 }
+
+/* =============================================
+   MOBILE RESPONSIVENESS (Media Queries)
+   ============================================= */
+
+@media (max-width: 950px) {
+  /* 1. Stack the main layout (Left Panel on top, Right Panel below) */
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* 2. Adjust the Left Panel's borders and shadows */
+  .left-panel {
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: 25px;
+    border-bottom: 6px double var(--yellow);
+    box-shadow: 0 4px 14px rgba(247, 208, 42, 0.25);
+  }
+
+  /* 3. Remove the extra padding from the Right Panel */
+  .right-panel {
+    padding-left: 0;
+  }
+
+  /* 4. Stack the TAT, Timeline, WT, and CPU result panels */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 5. Allow the table to scroll horizontally if it gets too wide */
+  .card table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  /* 6. Adjust the Header for very small phone screens */
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header-left, .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 18px; /* Shrink the title slightly */
+    line-height: 1.4;
+  }
+
+  /* 7. Shrink the big Job Counter number slightly */
+  .big-number {
+    font-size: 48px;
+    width: 100px;
+  }
+}
