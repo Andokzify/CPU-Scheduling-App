@@ -21,15 +21,15 @@ function getColor(index) {
 
 
 // =============================================
-// INITIAL JOB DATA
+// INITIAL JOB DATA (Now Empty)
 // =============================================
 
-// Default jobs when app starts
+// We keep the IDs (J1, J2, etc.) so the rows exist, but leave the values blank
 let jobs = [
-  { id: "J1", arrival: 1, burst: 2,  priority: 3 },
-  { id: "J2", arrival: 3, burst: 5,  priority: 1 },
-  { id: "J3", arrival: 5, burst: 19, priority: 2 },
-  { id: "J4", arrival: 7, burst: 18, priority: 4 }
+  { id: "J1", arrival: "", burst: "",  priority: "" },
+  { id: "J2", arrival: "", burst: "",  priority: "" },
+  { id: "J3", arrival: "", burst: "",  priority: "" },
+  { id: "J4", arrival: "", burst: "",  priority: "" }
 ];
 
 
@@ -513,41 +513,40 @@ function displayCPU(jobs, ganttBlocks) {
 
 
 // =============================================
-// RESET FUNCTION
+// RESET APP
 // =============================================
-
-// Resets everything back to default state
 function resetApp() {
+  // Clear the data back to empty strings
   jobs = [
-    { id: "J1", arrival: 1, burst: 2,  priority: 3 },
-    { id: "J2", arrival: 3, burst: 5,  priority: 1 },
-    { id: "J3", arrival: 5, burst: 19, priority: 2 },
-    { id: "J4", arrival: 7, burst: 18, priority: 4 }
+    { id: "J1", arrival: "", burst: "",  priority: "" },
+    { id: "J2", arrival: "", burst: "",  priority: "" },
+    { id: "J3", arrival: "", burst: "",  priority: "" },
+    { id: "J4", arrival: "", burst: "",  priority: "" }
   ];
 
   document.getElementById("algorithm").value = "FCFS";
 
-  let panels = ["tatBox", "wtBox", "timelineBox", "cpuBox"];
+  let panels = [\"tatBox\", \"wtBox\", \"timelineBox\", \"cpuBox\"];
   let msgs   = [
-    "Results will appear after calculation",
-    "Results will appear after calculation",
-    "Timeline will appear after calculation",
-    "Will appear after calculation"
+    \"Results will appear after calculation\",
+    \"Results will appear after calculation\",
+    \"Timeline will appear after calculation\",
+    \"Will appear after calculation\"
   ];
 
   for (let i = 0; i < panels.length; i++) {
     let box       = document.getElementById(panels[i]);
     box.innerHTML = msgs[i];
-    box.className = "panel-content gray-text";
+    box.className = \"panel-content gray-text\";
   }
 
-  document.getElementById("ganttBars").innerHTML   = "";
-  document.getElementById("burstLabels").innerHTML = "";
-  document.getElementById("timeLabels").innerHTML  = "";
+  document.getElementById(\"ganttBars\").innerHTML   = \"\";
+  document.getElementById(\"burstLabels\").innerHTML = \"\";
+  document.getElementById(\"timeLabels\").innerHTML  = \"\";
 
   hasCalculated = false;
   hideError();
-  buildTable();
+  buildTable(); // This redraws the empty rows
 }
 
 
